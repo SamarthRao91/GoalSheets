@@ -10,6 +10,7 @@ public class OutputSquares {
       square =  i + difference;
       System.out.println(square);
 
+
    }
 
 
