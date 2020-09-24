@@ -8,7 +8,7 @@ public class Quadratic {
         double solution1 = (-b + derivative)/(2*a);
         double solution2 = (-b - derivative)/(2*a);
 
-
+       //int[] solutionArray = new int[2];
         System.out.println("Solution #1 " + solution1 + "\n");
         System.out.println("Solution #2 " + solution2);
 
