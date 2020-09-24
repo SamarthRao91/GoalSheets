@@ -2,7 +2,7 @@ package TrigonometricFunctions;
 public class Triangle {
     public static void main(String[] args) {
 
-        triangle(8,6,7);
+        triangle(9,7,3);
 
     }
 
