@@ -4,14 +4,14 @@ public class ASCIIStairs {
 
 
         for (int i = numberOfStairs; i >= 0; i--) {
-            //printSpaces(i);
-            System.out.print("   o    *");
-            System.out.print("*****  \n");
             printSpaces(i);
-            System.out.print("       /|\\    *\n" );
+            System.out.print("             o");
+            System.out.print("   *****  \n");
             printSpaces(i);
-            System.out.print("       / \\    *\n");
+            System.out.print("            /|\\ *\n" );
             printSpaces(i);
+            System.out.print("            / \\ *\n");
+
         }
     }
     public static void printSpaces(int ammount)
