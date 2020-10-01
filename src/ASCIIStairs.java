@@ -1,6 +1,16 @@
 public class ASCIIStairs {
+
+
+
     public static void main(String[] args) {
         int numberOfStairs = 5;
+
+
+
+
+        
+
+
 
 
         for (int i = numberOfStairs; i >= 0; i--) {
@@ -13,6 +23,8 @@ public class ASCIIStairs {
             System.out.print("            / \\ *\n");
 
         }
+
+        System.out.println("                     ********************************");
     }
     public static void printSpaces(int ammount)
     {
