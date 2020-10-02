@@ -21,6 +21,7 @@ public class ASCIIStairs {
             System.out.print("            /|\\ *\n" );
             printSpaces(i);
             System.out.print("            / \\ *\n");
+            System.out.println("                                                    *");
 
         }
 
