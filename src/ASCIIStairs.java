@@ -3,7 +3,7 @@ public class ASCIIStairs {
 
 
     public static void main(String[] args) {
-        int numberOfStairs = 5;
+        int numberOfStairs = 0;
 
 
 
@@ -25,10 +25,10 @@ public class ASCIIStairs {
 
         }
 
-        System.out.println("                     ********************************");
+       // System.out.println("                     ********************************");
     }
     public static void printSpaces(int ammount)
-    {
+    {       
         for(int d = 0; d <= ammount; d++ ) {
             System.out.print("     ");
         }
