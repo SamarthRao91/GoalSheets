@@ -3,10 +3,10 @@ import java.util.Random;
 public class RandomLine {
     public static void main(String[] args) {
         int min = 5;
-        int max = 10;
+        int max = 11;
         double loopTimes = Math.random() * (max - min + 1) + min;
         loopTimes = (int) (loopTimes);
-        for(int i =1; i <= 5; i++)
+        for(int i =1; i <= loopTimes; i++)
         {
             RandomLines();
             System.out.println("\n");
