@@ -1,11 +1,12 @@
 public class RomanNumerals {
     public static void main(String[] args) {
-      convertNumbers(1234);
+      convertNumbers(5);
     }
     public static void convertNumbers(int userInput)
     {
         String a = "";
        //1234
+        //need somes fixing
         int m1 = userInput  % 10; //4
         int m2 = userInput % 100; //34
         int m3 = userInput % 1000; //234
