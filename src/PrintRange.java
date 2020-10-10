@@ -1,6 +1,6 @@
 public class PrintRange {
     public static void main(String[] args) {
-       printRange(5, 10);
+       printRange(10000, 1);
     }
     public static void printRange(int start, int end)
     {
