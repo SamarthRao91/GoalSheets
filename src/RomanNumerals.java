@@ -1,12 +1,12 @@
 public class RomanNumerals {
     public static void main(String[] args) {
-      convertNumbers(5);
+      convertNumbers(1234);
     }
     public static void convertNumbers(int userInput)
     {
         String a = "";
        //1234
-        //need somes fixing
+
         int m1 = userInput  % 10; //4
         int m2 = userInput % 100; //34
         int m3 = userInput % 1000; //234
@@ -30,7 +30,7 @@ public class RomanNumerals {
         {
             a += "MM";
         }
-        else
+        else if(result1 == 3)
         {
             a += "MMM";
         }
@@ -69,7 +69,7 @@ public class RomanNumerals {
         {
             a += "DCC";
         }
-        else
+        else if(result2 == 9)
         {
             a += "CM";
         }
@@ -107,7 +107,7 @@ public class RomanNumerals {
         {
             a += "LXX";
         }
-        else
+        else if(result3 == 9)
         {
             a += "XC";
         }
@@ -145,7 +145,7 @@ public class RomanNumerals {
         {
             a += "VII";
         }
-        else
+        else if(result4 == 9)
         {
             a += "IX";
         }
