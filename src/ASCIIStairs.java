@@ -1,6 +1,6 @@
 public class ASCIIStairs {
     public static void main(String[] args) {
-        int numberOfStairs = 0;
+        int numberOfStairs = 6;
          String bottomBar = "                 ****";
 
         for (int i = numberOfStairs; i >= 0; i--) {
