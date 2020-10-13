@@ -1,6 +1,6 @@
 public class RomanNumerals {
     public static void main(String[] args) {
-      convertNumbers(1234);
+      convertNumbers(1000);
     }
     public static void convertNumbers(int userInput)
     {
