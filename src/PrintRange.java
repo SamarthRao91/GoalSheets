@@ -5,20 +5,24 @@ public class PrintRange {
     public static void printRange(int start, int end)
     {
         if(start > end)
-        {
-            for(int i = start - 1; i > end; i--)
+        { System.out.print("{");
+            for(int i = start ; i >= end; i--)
             {
-                System.out.println(i);
+                System.out.print(i+ " ,");
             }
+            System.out.print("}");
         }
         else if(start == end)
         {
             System.out.println(start);
         }
         else {
-            for (int i = start + 1; i < end; i++) {
-                System.out.println(i);
+            System.out.print("{");
+            for (int i = start; i <=end; i++) {
+                System.out.print(i + " ,");
+
             }
+            System.out.print("}");
         }
     }
 }
