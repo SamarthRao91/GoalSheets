@@ -11,11 +11,15 @@ public class padString_01 {
     //output-            hello
     public static String padString(String value, int padding)
     {
-
+        String startValue = value;
         for(int i = 0; i < padding; i++)
         {
 
             value = " " + value;
+            if(value.equals(startValue))
+            {
+              return value;
+            }
 
         }
         return value;
