@@ -3,6 +3,7 @@ public class GoalSheet03_05 {
     public static void main(String[] args) {
         int wordCount = 0;
         int emptySpace = 32;
+        int endOfLine = 0x0D0A0;
         char charEmptySpace = (char) (emptySpace);
       Scanner charInput = new Scanner(System.in);
       System.out.println("Please input the values");
@@ -10,7 +11,7 @@ public class GoalSheet03_05 {
 
            for(int c =0; c < paperInput.length(); c++)
            {
-               if(paperInput.charAt(c) == charEmptySpace)
+               if(paperInput.charAt(c) == charEmptySpace||paperInput.charAt(c) == endOfLine)
                {
                    wordCount++;
                }
