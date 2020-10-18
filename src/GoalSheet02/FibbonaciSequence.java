@@ -1,3 +1,5 @@
+package GoalSheet02;
+
 public class FibbonaciSequence {
     public static void main(String[] args) {
         int a =0;

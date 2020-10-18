@@ -1,3 +1,5 @@
+package GoalSheet02;
+
 public class OutputSquares {
     public static void main(String[] args) {
         int givenNumber = 100;

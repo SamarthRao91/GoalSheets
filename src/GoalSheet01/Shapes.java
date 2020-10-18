@@ -1,3 +1,5 @@
+package GoalSheet01;
+
 public class Shapes {
     public static void Shape1()
     {

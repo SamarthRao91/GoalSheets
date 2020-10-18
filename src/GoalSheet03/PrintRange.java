@@ -1,3 +1,5 @@
+package GoalSheet03;
+
 public class PrintRange {
     public static void main(String[] args) {
        printRange(10000, 1);

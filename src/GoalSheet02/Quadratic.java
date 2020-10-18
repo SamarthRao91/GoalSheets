@@ -1,3 +1,5 @@
+package GoalSheet02;
+
 public class Quadratic {
     public static void main(String[] args) {
        quadraticFunction(2,4,5);

@@ -1,3 +1,5 @@
+package GoalSheet01;
+
 public class Victory {
     public static void VictoryPrint()
     {

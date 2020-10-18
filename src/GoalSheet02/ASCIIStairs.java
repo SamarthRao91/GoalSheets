@@ -1,7 +1,13 @@
+package GoalSheet02;
+
 public class ASCIIStairs {
     public static void main(String[] args) {
-        int numberOfStairs = 6;
+        int numberOfStairs = 4;
          String bottomBar = "                 ****";
+         String sideLine = "*";
+       for (int i = numberOfStairs; i >= 0; i--) {
+           sideLine = "      "+sideLine;
+        }
 
         for (int i = numberOfStairs; i >= 0; i--) {
             printSpaces(i);
@@ -10,10 +16,15 @@ public class ASCIIStairs {
             printSpaces(i);
             System.out.print("            /|\\ *\n");
             printSpaces(i);
-            System.out.print("            / \\ *\n");
+            System.out.print("            / \\ *"+sideLine+"\n");
+
+
 
         }
-        for (int i = numberOfStairs; i >= 1; i--) {
+
+
+
+        for (int i = numberOfStairs; i >= 0; i--) {
             bottomBar = bottomBar + "******";
         }
         System.out.println(bottomBar);

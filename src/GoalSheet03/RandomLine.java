@@ -1,3 +1,5 @@
+package GoalSheet03;
+
 import java.util.Random;
 
 public class RandomLine {
