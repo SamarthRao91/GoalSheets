@@ -7,13 +7,19 @@ public class GoalSheet03_05 {
 
 
         Scanner fileInput = new Scanner(new File("C:\\Users\\raosa\\IdeaProjects\\GoalSheets\\src\\GoalSheet03\\doc.txt"));
+        Scanner lineInput = new Scanner(new File("C:\\Users\\raosa\\IdeaProjects\\GoalSheets\\src\\GoalSheet03\\doc.txt"));
+
         int wordCount = 0;
         int characterCounter = 0;
         int countOfLines=0;
 
+          while(lineInput.hasNextLine())
+          {
+              countOfLines++;
+              lineInput.nextLine();
+          }
 
-
-        while (fileInput.hasNextLine()) {
+        while (fileInput.hasNext()) {
 
 
             wordCount++;
@@ -24,12 +30,9 @@ public class GoalSheet03_05 {
                 for (int c = 0; c < word.length(); c++) {
                     if (word.charAt(c) == iNumber) {
 
-                     characterCounter++;
+                        characterCounter++;
                     }
-                    if( word.charAt(c) == '\n')
-                    {
-                        countOfLines++;
-                    }
+
                 }
 
 
