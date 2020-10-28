@@ -5,7 +5,7 @@ public class processName_03 {
     {
       processesName("Hi my name is Samarth");
 
-    }
+    }   
     public static void processesName(String input)
     {
         String[] nameArray = input.split("\\s");
