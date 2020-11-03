@@ -3,7 +3,7 @@ package GoalSheet04;
 public class processName_03 {
     public static void main(String[] args)
     {
-      processesName("Hi my name is Samarth");
+      processesName("Samarth Rao");
 
     }   
     public static void processesName(String input)
