@@ -4,35 +4,49 @@ import java.util.*;
 
 public class hangman_02 {
     public static void main(String[] args) {
-        int continueOn = 0;
-        String word = "cow";
-        String[] splitWord = new String[word.length()];
+        //making some variables
+        boolean gameFinished = false;
+        String input;
+        String word = "cool";
+        boolean wordCorrect = false;
+        String[] wordArray = new String[word.length()];
         String[] userWord = new String[word.length()];
-        splitWord = word.split("(?!^)");
-        while (continueOn == 0) {
+        wordArray = word.split("(?!^)");
+        int counter = 0;
+        while (gameFinished == false) {
             //Getting the input from the user
             Scanner userInput = new Scanner(System.in);
             System.out.println("Please enter a letter");
-            String input = userInput.nextLine();
+            input = userInput.nextLine();
 
-            //checking the input
-            for (int i = splitWord.length -1 ; i >= 0; i--) {
+            //check the user input
+            for (int i = wordArray.length - 1; i >= 0; i--) {
+                if (input == wordArray[i]) {
 
-                if (input == splitWord[i]) {
+                    wordCorrect = true;
+                }
+
+                if(wordCorrect == true)
+                {
+                    System.out.println("That letter has correct");
                     input = userWord[i];
-                    System.out.println("correct");
-                } else {
-                    System.out.println("incorrect");
+                    wordCorrect = false;
+                }
+                else
+                {
+                    System.out.println("The letter you guessed was incorrect");
                 }
 
             }
 
-            if (splitWord == userWord) {
-                continueOn = 1;
+
+            //check if the user has finished the game
+            if (counter == word.length()) {
+                gameFinished = true;
+                System.out.println("The Game has finished, you have won");
             }
-
-
         }
+       }
     }
-}
+
 
