@@ -7,9 +7,10 @@ public class hangman_02 {
         //making some variables
         boolean gameFinished = false;
         String input;
-        String word = "cool";
+        String word = "I am cool";
         boolean wordCorrect = false;
         String[] wordArray = new String[word.length()];
+        String[] userWord = new String[word.length()];
         int counter =0;
         wordArray = word.split("(?!^)");
         while (!gameFinished) {
@@ -23,6 +24,7 @@ public class hangman_02 {
                 if (input.equals(wordArray[i])) {
 
                     wordCorrect = true;
+                    userWord[i] = input;
 
                 }
             }
@@ -31,6 +33,7 @@ public class hangman_02 {
             {
                 System.out.println("That letter has correct");
                 counter++;
+                System.out.println(Arrays.toString(userWord));
                 wordCorrect = false;
             }
             else
