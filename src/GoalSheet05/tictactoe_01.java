@@ -9,7 +9,7 @@ public class tictactoe_01 {
 
 
         String[][] board;
-        board = new String[][]{{" ", " ", " "},{ " ", " ", " "},{ " ", " ", " "}};
+        board = new String[][]{{"-", "-", "-"},{ "-", "-", "-"},{ "-", "-", "-"}};
         System.out.println(
                 "| | | |\n" +
                         "| | | |\n" +
@@ -24,7 +24,7 @@ public class tictactoe_01 {
             System.out.println("Then enter the column");
             Scanner userSelectioncolumn = new Scanner(System.in);
             int userInputColumn = userSelectioncolumn.nextInt();
-            if(userInputRow > 0 &&userInputColumn >0 && userInputRow <=9 && userInputColumn <=9 && board[userInputRow - 1][userInputColumn - 1].equals(" "))
+            if(userInputRow > 0 &&userInputColumn >0 && userInputRow <=9 && userInputColumn <=9 && board[userInputRow - 1][userInputColumn - 1].equals("-"))
             {
                 // System.out.println("Tester");
                 board[userInputRow - 1][userInputColumn - 1] = turn;
@@ -42,6 +42,14 @@ public class tictactoe_01 {
             else
             {
                 System.out.println("Please enter a valid input or that tile is already filled");
+            }
+            for (int row = 0; row < board.length; row++)//Cycles through rows
+            {
+                for (int col = 0; col < board[row].length; col++)//Cycles through columns
+                {
+                    System.out.printf("%s", board[row][col]); //change the %5d to however much space you want
+                }
+                System.out.println(); //Makes a new row
             }
 
             //check if the game has been won
