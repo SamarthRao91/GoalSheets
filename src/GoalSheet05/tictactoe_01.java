@@ -1,4 +1,6 @@
 package GoalSheet05;
+
+
 import java.util.*;
 public class tictactoe_01 {
     public static void main(String[] args) {
@@ -8,25 +10,27 @@ public class tictactoe_01 {
 
 
 
-       String board[] = new String[9];
+       String[] board;
+       board = new String[]{" ", " ", " ", " ", " ", " ", " ", " ", " ",};
 
-       while(!gameWon)
+        while(!gameWon)
        {
            System.out.println("Select a tile to place on by entering a value 1 to 9 (top left of the board - to bottom right). X goes first. ");
-           System.out.println(gameWon);
            Scanner userSelection = new Scanner(System.in);
            int userInput = userSelection.nextInt();
-          if(userInput > 0 && userInput <=9 && board[userInput -1] == null )
+          if(userInput > 0 && userInput <=9 && board[userInput - 1].equals(" "))
           {
              // System.out.println("Tester");
               board[userInput - 1] = turn;
               if(turn.equals("X"))
               {
                   turn = "O";
+                  System.out.println("The turn has swapped to O");
               }
                else
               {
                   turn = "X";
+                  System.out.println("The turn has swapped to X");
               }
           }
              else
@@ -37,14 +41,8 @@ public class tictactoe_01 {
           //check if the game has been won
 
 
-           gameWon =  checkIfWon(board, 0,1,2);
-           gameWon =  checkIfWon(board, 0,4,8);
-           gameWon =  checkIfWon(board, 2,4,6);
-           gameWon =  checkIfWon(board, 3,4,5);
-           gameWon =  checkIfWon(board, 0,3,6);
-           gameWon =  checkIfWon(board, 1,4,7);
-           gameWon =  checkIfWon(board, 2,5,8);
-           gameWon =  checkIfWon(board, 6,7,8);
+             gameWon = checkIfWon(board);
+
 
 
 
@@ -52,14 +50,55 @@ public class tictactoe_01 {
 
 
     }
-    public static boolean checkIfWon(String[] board ,  int firstValue, int secondValue, int thirdValue)
+    public static  boolean checkIfWon(String[] board )
     {
-        String X = "X";
-        String O = "O";
+        String line = "";
         boolean gameIsWon = false;
-        if (board[firstValue].equals(X) || board[firstValue].equals(O) && board[secondValue].equals(X) || board[secondValue].equals(O) && board[thirdValue].equals(X) || board[thirdValue].equals(O)  ) {
-            gameIsWon = true;
-        }
+       for(int i =1; i <= 8; i++)
+       {
+           if(i ==1)
+           {
+            line = board[0] + board[4] + board[8];
+           }
+           if(i ==2)
+           {
+               line = board[0] + board[3] + board[6];
+           }
+           if(i ==3)
+           {
+               line = board[2] + board[4] + board[6];
+           }
+           if(i ==4)
+           {
+               line = board[1] + board[4] + board[7];
+           }
+           if(i == 5)
+           {
+               line = board[0] + board[1] + board[2];
+           }
+           if(i == 6)
+           {
+               line = board[2] + board[5] + board[8];
+           }
+           if(i == 7)
+           {
+               line = board[3] + board[4] + board[5];
+           }
+           if(i == 8)
+           {
+               line = board[6] + board[7] + board[8];
+           }
+           if(line.equals("XXX")) {
+               System.out.println("X has won the game!!");
+               gameIsWon = true;
+           }
+           if(line.equals("OOO"))
+           {
+               gameIsWon = true;
+               System.out.println("O has won the game");
+           }
+       }
+
         return gameIsWon;
     }
 
