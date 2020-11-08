@@ -43,13 +43,13 @@ public class tictactoe_01 {
             {
                 System.out.println("Please enter a valid input or that tile is already filled");
             }
-            for (int row = 0; row < board.length; row++)//Cycles through rows
+            for (int row = 0; row < board.length; row++)
             {
-                for (int col = 0; col < board[row].length; col++)//Cycles through columns
+                for (int col = 0; col < board[row].length; col++)
                 {
-                    System.out.printf("%s", board[row][col]); //change the %5d to however much space you want
+                    System.out.printf("%s", board[row][col]);
                 }
-                System.out.println(); //Makes a new row
+                System.out.println();
             }
 
             //check if the game has been won
