@@ -5,6 +5,7 @@ public class tictactoe_01 {
         //initialize other variables
         boolean gameWon = false;
         String turn = "X";
+        int counter = 0;
 
 
 
@@ -38,6 +39,7 @@ public class tictactoe_01 {
                     turn = "X";
                     System.out.println("The turn has swapped to X");
                 }
+                counter++;
             }
             else
             {
@@ -56,9 +58,11 @@ public class tictactoe_01 {
 
 
             gameWon = checkIfWon(board);
-
-
-
+          if(counter == 9 && !gameWon)
+          {
+              System.out.println("the game has ended in a draw");
+              gameWon = true;
+          }
 
         }
 
@@ -72,31 +76,31 @@ public class tictactoe_01 {
         {
             if(i ==1)
             {
-                line = board[0][0]+ board[1][1] + board[2][2];
+                line = board[0][0]+ board[0][1] + board[0][2];
             }
             if(i ==2)
             {
-                line = board[2][0] + board[1][1] + board[0][2];
+                line = board[1][0] + board[1][1] + board[1][2];
             }
             if(i ==3)
             {
-                line = board[0][0] + board[0][1] + board[0][2];
+                line = board[2][0] + board[2][1] + board[2][2];
             }
             if(i ==4)
             {
-                line = board[1][0] + board[1][1] + board[1][2];
+                line = board[0][0] + board[1][0] + board[2][0];
             }
             if(i == 5)
             {
-                line = board[2][0] + board[1][2] + board[2][2];
+                line = board[0][1] + board[1][1] + board[2][1];
             }
             if(i == 6)
             {
-                line = board[2][0] + board[0][0] + board[1][0];
+                line = board[0][2] + board[1][1] + board[2][0];
             }
             if(i == 7)
             {
-                line = board[0][1] + board[1][1] + board[1][2];
+                line = board[0][0] + board[1][1] + board[2][2];
             }
             if(i == 8)
             {
