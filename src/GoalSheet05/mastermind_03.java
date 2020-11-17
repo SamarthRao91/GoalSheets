@@ -13,9 +13,11 @@ public class mastermind_03 {
         int checkForWhite;
         int[] userGuesses = {0, 0,0,0,0};
         String[] guessFeedback = new String[4];
-        int[] code = {1, 2, 3, 4};
+        int[] code = {6, 6, 8, 4};
         int  checkForBlack;
         while(!gameWon) {
+            blackPegs = 0;
+            whitePegs = 0;
             System.out.println("Please enter your first guess");
             Scanner userInputOne = new Scanner(System.in);
             int firstUserGuess = userInputOne.nextInt( );
@@ -100,7 +102,7 @@ public class mastermind_03 {
 
    }
    public static int checkAnswer(int[] code, String[] guessFeedback, int userGuess, int guessNumber)
-   {    int peg = 0;
+   {    int peg = 3;
        int blackCounter = 0;
        int whiteCounter = 0;
        boolean isPeg = false;
