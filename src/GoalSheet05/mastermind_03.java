@@ -13,7 +13,7 @@ public class mastermind_03 {
         int checkForWhite;
         int[] userGuesses = {0, 0,0,0,0};
         String[] guessFeedback = new String[4];
-        int[] code = {6, 6, 8, 4};
+        int[] code = {6,6,8,4};
         int  checkForBlack;
         while(!gameWon) {
             blackPegs = 0;
@@ -91,7 +91,7 @@ public class mastermind_03 {
             System.out.println("So far, you have " + blackPegs + " black pegs and " + whitePegs + " white pegs");
 
             //check if they have won the game
-            if(counter == 4)
+            if(blackPegs == 4)
             {
                 gameWon = true;
                 System.out.println("You have guessed the code correctly and won the game");
