@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class mastermind_03 {
     public static void main(String[] args)
-    {
+    { //test
         //declare variables
         boolean gameWon = false;
         int blackPegs=0;
