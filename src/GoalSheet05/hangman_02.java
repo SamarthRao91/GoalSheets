@@ -9,6 +9,13 @@ public class hangman_02 {
         String input;
         String splitWord= "";
         String word = "cool";
+        System.out.println("The word has " + word.length() + " letters");
+        System.out.println("\n");
+        for(int i = 0; i <= word.length(); i++)
+        {
+            System.out.print("_ ");
+        }
+        System.out.println("\n");
         int amountOfGuesses = 0;
         String[] wordsGuessed;
         wordsGuessed = new String[]{"", "", "", "", "", "", "", "", "", ""};
@@ -21,7 +28,7 @@ public class hangman_02 {
         while (!gameFinished ) {
             //Getting the input from the user
             Scanner userInput = new Scanner(System.in);
-            System.out.println("Please enter a letter");
+            System.out.println("Please enter a letter , no spaces");
             input = userInput.nextLine();
 
             //check the user input
