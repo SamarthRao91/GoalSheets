@@ -6,3 +6,6 @@ public class Ticket {
         System.out.println("Ticket Number + "+ ticketNumber + " Price: " + ticketPrice);
     }
 }
+public class WalkupTicket extends Ticket {
+    
+}
