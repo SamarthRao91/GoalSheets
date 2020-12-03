@@ -1,8 +1,27 @@
 package GoalSheet06;
 
+
 public class StudentAdvanceTicket extends AdvanceTicket {
-    public StudentAdvanceTicket(int ticketNumber, int ticketPrice, int daysBefore) {
-        super(ticketNumber, ticketPrice, daysBefore);
-        System.out.println("ID Required");
+    int price;
+
+    public StudentAdvanceTicket(int ticketNumber) {
+        super(ticketNumber);
+    }
+    public int getTicketPrice(int ticketPrice)
+    {
+        if(daysBefore <=10)
+        {
+            ticketPrice = 15;
+        }
+        else
+        {
+            ticketPrice = 20;
+        }
+        return ticketPrice;
+    }
+    public String toString()
+    {
+        return "Number" +new Ticket(number) + "Price" + getTicketPrice(ticketPrice) + "ID Required";
+
     }
 }
