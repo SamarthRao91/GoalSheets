@@ -5,8 +5,8 @@ public class Ticket {
     int ticketPrice;
     public Ticket(int ticketNumber)
     {
-
     }
+
     public int getTicketPrice(int ticketPrice)
     {
         return ticketPrice;
@@ -15,6 +15,11 @@ public class Ticket {
     {
       return "Number" +new Ticket(number) + "Price" + getTicketPrice(ticketPrice);
     }
+
+
+
+
+
     public static void main(String[] args)
     {
         Ticket newTicket = new Ticket(1);
