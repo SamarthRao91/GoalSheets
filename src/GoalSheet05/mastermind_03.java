@@ -20,7 +20,7 @@ public class mastermind_03 {
             int firstUserGuess = userInputOne.nextInt( );
             userGuesses[0] = firstUserGuess;
            // checkAnswer(code,guessFeedback,firstUserGuess,1);
-            guessFeedback = checkAnswer(code,firstUserGuess,1, guessFeedback);
+            checkAnswer(code,firstUserGuess,1, guessFeedback);
             System.out.println(Arrays.toString(guessFeedback));
             //enter the second color input
             System.out.println("Please enter your second guess");
@@ -28,7 +28,7 @@ public class mastermind_03 {
             int secondUserGuess = userInputSecond.nextInt();
             userGuesses[1] = secondUserGuess;
             //checkAnswer(code,guessFeedback,secondUserGuess,2);
-            guessFeedback = checkAnswer(code,firstUserGuess,2, guessFeedback);
+            checkAnswer(code,secondUserGuess,2, guessFeedback);
             System.out.println(Arrays.toString(guessFeedback));
 
             //third colour input
@@ -37,7 +37,7 @@ public class mastermind_03 {
             int thirdUserGuess = userInputThird.nextInt();
             userGuesses[2] = thirdUserGuess;
             //checkAnswer(code,guessFeedback,thirdUserGuess,3);
-            guessFeedback = checkAnswer(code,firstUserGuess,3, guessFeedback);
+            checkAnswer(code,thirdUserGuess,3, guessFeedback);
             System.out.println(Arrays.toString(guessFeedback));
 
             //fourth user input
@@ -46,7 +46,7 @@ public class mastermind_03 {
            int fourthUserGuess = userInputFourth.nextInt();
             userGuesses[3] = fourthUserGuess;
             //checkAnswer(code,guessFeedback,fourthUserGuess,4);
-            guessFeedback = checkAnswer(code,firstUserGuess,4, guessFeedback);
+            guessFeedback = checkAnswer(code,fourthUserGuess,4, guessFeedback);
             System.out.println(Arrays.toString(guessFeedback));
 
             //check if they have won the game
@@ -59,32 +59,29 @@ public class mastermind_03 {
         }
    }
    public static String[] checkAnswer(int[] code,int userGuess, int guessNumber, String[] guessFeedback)
-   {    int peg = 3;
-       int blackCounter = 0;
-       int whiteCounter = 0;
+   {
        boolean isPeg = false;
        if(userGuess == code[guessNumber -1])
-       {
-           blackCounter++;
-
+       {   System.out.println("UserGuess " + userGuess + " "+ "Current Value Of the Code " +  code[guessNumber -1 ]);
            System.out.println("The guess returned a black peg");
            isPeg = true;
-           guessFeedback[nextEmptyIndex] = "black";
+           guessFeedback[nextEmptyIndex] = "black: ⚫";
            nextEmptyIndex++;
-           System.out.println(nextEmptyIndex);
+           System.out.println(guessNumber);
            return guessFeedback;
+
        }
        //check for the white pegs
        for(int i = code.length - 1; i >=0; i-- )
        {
            if(userGuess == code[i])
            {
-               blackCounter++;
+
                System.out.println("The guess returned a white peg");
                isPeg = true;
-               guessFeedback[nextEmptyIndex] = "white";
+               guessFeedback[nextEmptyIndex] = "white: ⚬";
                nextEmptyIndex++;
-               System.out.println(nextEmptyIndex);
+               System.out.println(guessNumber);
                return guessFeedback;
            }
        }
@@ -95,7 +92,7 @@ public class mastermind_03 {
 
        }
 
-            return guessFeedback;
+           return guessFeedback;
                 }
 
 }
