@@ -67,7 +67,7 @@ public class mastermind_03 {
        if(userGuess == code[guessNumber -1])
        {
            blackCounter++;
-           guessFeedback[0] = "black";
+
            System.out.println("The guess returned a black peg");
            isPeg = true;
            guessFeedback[nextEmptyIndex] = "black";
@@ -81,7 +81,6 @@ public class mastermind_03 {
            if(userGuess == code[i])
            {
                blackCounter++;
-               guessFeedback[i] = "white";
                System.out.println("The guess returned a white peg");
                isPeg = true;
                guessFeedback[nextEmptyIndex] = "white";
