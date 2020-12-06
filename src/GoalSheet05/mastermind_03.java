@@ -4,15 +4,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class mastermind_03 {
+    static int nextEmptyIndex = 0;
     public static void main(String[] args)
     {
         boolean gameWon = false;
-        int nextEmptyIndex=0;
+        // int nextEmptyIndex=0;
         int[] userGuesses = {0, 0,0,0,0};
         String[] win = new String[]{"black","black", "black", "black"};
         String[] guessFeedback = new String[4];
         int[] code = {6,6,8,4};
-
         while(!gameWon) {
 
             System.out.println("Please enter your first guess");
@@ -20,7 +20,7 @@ public class mastermind_03 {
             int firstUserGuess = userInputOne.nextInt( );
             userGuesses[0] = firstUserGuess;
            // checkAnswer(code,guessFeedback,firstUserGuess,1);
-            guessFeedback = checkAnswer(code,firstUserGuess,1, nextEmptyIndex);
+            guessFeedback = checkAnswer(code,firstUserGuess,1);
             System.out.println(Arrays.toString(guessFeedback));
             //enter the second color input
             System.out.println("Please enter your second guess");
@@ -28,7 +28,7 @@ public class mastermind_03 {
             int secondUserGuess = userInputSecond.nextInt();
             userGuesses[1] = secondUserGuess;
             //checkAnswer(code,guessFeedback,secondUserGuess,2);
-            guessFeedback = checkAnswer(code,firstUserGuess,2, nextEmptyIndex);
+            guessFeedback = checkAnswer(code,firstUserGuess,2);
             System.out.println(Arrays.toString(guessFeedback));
 
             //third colour input
@@ -37,7 +37,7 @@ public class mastermind_03 {
             int thirdUserGuess = userInputThird.nextInt();
             userGuesses[2] = thirdUserGuess;
             //checkAnswer(code,guessFeedback,thirdUserGuess,3);
-            guessFeedback = checkAnswer(code,firstUserGuess,3, nextEmptyIndex);
+            guessFeedback = checkAnswer(code,firstUserGuess,3);
             System.out.println(Arrays.toString(guessFeedback));
 
             //fourth user input
@@ -46,7 +46,7 @@ public class mastermind_03 {
            int fourthUserGuess = userInputFourth.nextInt();
             userGuesses[3] = fourthUserGuess;
             //checkAnswer(code,guessFeedback,fourthUserGuess,4);
-            guessFeedback = checkAnswer(code,firstUserGuess,4, nextEmptyIndex);
+            guessFeedback = checkAnswer(code,firstUserGuess,4);
             System.out.println(Arrays.toString(guessFeedback));
 
             //check if they have won the game
@@ -58,7 +58,7 @@ public class mastermind_03 {
 
         }
    }
-   public static String[] checkAnswer(int[] code,int userGuess, int guessNumber, int nextEmptyIndex)
+   public static String[] checkAnswer(int[] code,int userGuess, int guessNumber)
    {    int peg = 3;
        int blackCounter = 0;
        int whiteCounter = 0;
@@ -90,8 +90,7 @@ public class mastermind_03 {
            }
        }
       //checking for no pegs matched
-       if(!isPeg)
-       {
+       if(!isPeg) {
            System.out.println("Your guess is not in the code");
            return guessFeedback;
 
