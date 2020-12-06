@@ -86,6 +86,7 @@ public class mastermind_03 {
                isPeg = true;
                guessFeedback[nextEmptyIndex] = "white";
                nextEmptyIndex++;
+               System.out.println(nextEmptyIndex);
                return guessFeedback;
            }
        }
