@@ -9,7 +9,7 @@ public Hexagon(double sideLength)
 
 public double getArea()
 {
-    double area = ((3 * Math.sqrt(3))/2) * (sideLength* sideLength );
+    double area = ((3 * Math.sqrt(3))/2.0) * (sideLength* sideLength );
     return area;
 }
 
