@@ -3,7 +3,7 @@ package GoalSheet07;
 import java.util.*;
 public class scaleByK {
     static int nextEmptyIndex =0;
-    public void main (String[] args)
+    public static void main (String[] args)
     {
       ArrayList<Integer> toBeScaled = new ArrayList<Integer>();
 
@@ -11,11 +11,11 @@ public class scaleByK {
         toBeScaled.set(1, 3);
         toBeScaled.set(2, 3);
         toBeScaled.set(3, 1);
-        scaleByK(toBeScaled);
+        System.out.println(scalesByK(toBeScaled));
 
     }
 
-    public ArrayList<Integer> scaleByK(ArrayList<Integer> numbers)
+    public static ArrayList<Integer> scalesByK(ArrayList<Integer> numbers)
     {   int value = 0;
         for(int i =0; i <= numbers.size(); i++) {
             //remove the 0's and the negative values
