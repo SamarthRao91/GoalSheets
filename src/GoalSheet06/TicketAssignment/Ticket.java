@@ -18,9 +18,9 @@ public class Ticket {
 
 
     public static void main(String[] args)
-    {
-        Ticket newTicket = new StudentAdvanceTicket(1 ,10);
+    {Ticket newTicket = new StudentAdvanceTicket(1 ,10);
         System.out.println(newTicket);
+
 
         Ticket myTicket = new WalkupTicket(1);
         //int price = myTicket.getTicketPrice();
