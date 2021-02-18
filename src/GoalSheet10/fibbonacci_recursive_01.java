@@ -1,4 +1,6 @@
-class Main {
+package GoalSheet10;
+
+class fibbonacci_recursive_01 {
   public static void main(String[] args) {
    System.out.println(fibbonnaci(5));
   }
