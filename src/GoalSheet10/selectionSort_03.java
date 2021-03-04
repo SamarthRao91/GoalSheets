@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class selectionSort_03
 {
     public static void main(String[] args) {
-        int[] series =  new int[]{1,3,6,9};
+        int[] series =  new int[]{4,3,6,1};
         selectionSort(series);
     }
     public static void swapMethod(int[] list, int i, int b)
@@ -18,22 +18,19 @@ public class selectionSort_03
     }
     public static void selectionSort(int[] list)
     {
-        int largestIndex = 0;
-        for(int j =list.length - 1; j > 0; j--)
+        int smallestIndex = 0;
+        for(int j =0; j < list.length; j++)
         {
             //check each one to be the smallest value
-            largestIndex  = j;
-            for(int k = list.length -1; k <j-1 ; k++)
+            smallestIndex  = j;
+            for(int k = j +1; k < list.length; k++)
             {
-                if(list[k] < list[largestIndex])
+                if(list[k] < list[smallestIndex])
                 {
-                    swapMethod(list, largestIndex, k);
+                    swapMethod(list, k, smallestIndex);
                 }
             }
         }
         System.out.println( Arrays.toString(list));
     }
 }
-// loop from the end of the array to the beginning of an array
-//check if that value -1 is the largest value
-// swap it
