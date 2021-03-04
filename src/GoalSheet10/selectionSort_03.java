@@ -18,10 +18,10 @@ public class selectionSort_03
     }
     public static void selectionSort(int[] list)
     {
-        int largestIndex = 0;
+        int largestIndex;
         for(int j =0; j < list.length; j++)
         {
-            //check each one to be the smallest value
+            //check each one to be the largest value
             largestIndex  = j;
             for(int k = j +1; k < list.length; k++)
             {
