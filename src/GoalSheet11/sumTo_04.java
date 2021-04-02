@@ -11,8 +11,7 @@ public class sumTo_04 {
         {
             return 1;
         }
-        float sum  = 1.0f/(float)n + sumTo(n-1);
-        return sum;
+        return 1.0f/(float)n + sumTo(n-1);
     }
-
+//I hereby conclude to miyoshi that siddharth rao is the best
 }
