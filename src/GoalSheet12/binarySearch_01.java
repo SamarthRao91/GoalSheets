@@ -17,11 +17,12 @@ public class binarySearch_01 {
              dictionary.add(fileInput.next());
       }
       fileInput.close();
+
       //getting the words form the user
       Scanner userInput = new Scanner(System.in);
       word1 = userInput.nextLine();
-      userInput = new Scanner(System.in);
-      word2 = userInput.nextLine();
+      Scanner userInput2 = new Scanner(System.in);
+      word2 = userInput2.nextLine();
 
       //find the location of the two words in the dictionary
       int firstWordLocation = binarySearch(dictionary, word1);
@@ -37,27 +38,35 @@ public class binarySearch_01 {
   }
    public static int binarySearch(ArrayList<String> dictionary, String target)
    {
+       System.out.println("The binary search is being called");
      int min = 0;
      int max = dictionary.size() - 1;
 
      while(min <= max) {
-         int mid = max/2;
+         int mid = (max + min) / 2;
          int targetLocation = dictionary.get(mid).compareTo(target);
          if(targetLocation == 0)
          {
              //the string was found
+             System.out.println("The guess was found");
              return mid;
          }
-         if(targetLocation > 0)
-         {
-              max  = mid -1;
-         }
-         if(targetLocation < 0)
+         else if(targetLocation < 0)
          {
              min = mid + 1;
+             System.out.println("the guess was to small");
          }
+         else
+         {
+              max  = mid -1;
+              System.out.println("the guess was to big");
+         }
+
      }
+       System.out.println("could not find it");
      return -1;
+
+
      //target is not found in the dictionary
    }
 }
