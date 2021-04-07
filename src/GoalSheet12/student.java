@@ -5,19 +5,21 @@ import java.util.Collections;
 import java.lang.*;
 import java.io.*;
 import java.util.Comparator;
+import java.util.Scanner;
 
 class student {
-     String lastName, firstName, letterGrade;
-     int ID, gradePercentage;
+    String lastName, firstName, letterGrade;
+    int ID, gradePercentage;
 
-     public student(String firstName, String lastName, String letterGrade, int ID, int gradePercentage) {
-         this.firstName = firstName;
-         this.lastName = lastName;
-         this.gradePercentage = gradePercentage;
-         this.letterGrade = letterGrade;
-         this.ID = ID;
+    public student(String firstName, String lastName, String letterGrade, int ID, int gradePercentage) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gradePercentage = gradePercentage;
+        this.letterGrade = letterGrade;
+        this.ID = ID;
 
-     }
+    }
+}
 
      class Sortbylastname implements Comparator<student> {
          public int compare(student o1, student o2) {
@@ -25,7 +27,7 @@ class student {
          }
      }
 
-     class Sortbyfirstname implements Comparator<student> {
+      class Sortbyfirstname implements Comparator<student> {
          public int compare(student o1, student o2) {
              return o1.firstName.compareTo(o2.firstName);
          }
@@ -48,15 +50,16 @@ class student {
              return o1.letterGrade.compareTo(o2.letterGrade);         }
      }
 
- }
 class Main {
-    public static void main(String[] args) {
-        ArrayList<student> school = new ArrayList<student>();
-        school.add(new student("bob", "joe", "A", 9334, 97));
-        school.add(new student("rob", "steve", "C", 9462, 75));
-        school.add(new student("todd", "jim", "F", 9432, 32));
+    public static void main(String[] args) throws FileNotFoundException {
+        ArrayList<student> students = new ArrayList<student>();
+        //open the file, get input and close the file
+        String filePath = "C:\\Users\\raosa\\IdeaProjects\\GoalSheets\\src\\GoalSheet12\\StudentFile";
+        Scanner fileInput = new Scanner(new File(filePath));
 
-        Collections.sort(school, new Sortbyfirstname());
+
+
+
     }
 }
 
