@@ -1,8 +1,10 @@
+package GoalSheet08;
+
 import java.awt.List;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-class Main {
+class removeFromRange {
   public static void main(String[] args) {
   //pass in a linked list and then add the values to the list
     LinkedList<Integer> numbers = new LinkedList<Integer>();
