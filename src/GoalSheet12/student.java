@@ -61,6 +61,7 @@ class Main {
         String word;
         ArrayList<student> students = new ArrayList<student>();
         //open the file, get input and close the file
+        //file path stored in a string
         String filePath = "C:\\Users\\raosa\\IdeaProjects\\GoalSheets\\src\\GoalSheet12\\studentFile.txt";
         Scanner fileInput = new Scanner(new File(filePath));
         while(fileInput.hasNext())
@@ -80,7 +81,35 @@ class Main {
             students.add(new student(words[0],words[1],words[4],Id, gradePercentage));
         }
 
-        Collections.sort(students, new Sortbyfirstname());
+         Scanner userChoice = new Scanner(System.in);
+        System.out.println("How do you want to sort your data, \n 1- FirstName, 2 - LastName, 3 - ID, 4-letterGrade, 5- Percantage");
+        System.out.print("\n");
+        int input = userChoice.nextInt();
+
+         if(input== 1)
+         {
+             Collections.sort(students, new Sortbyfirstname());
+         }
+         else if (input == 2) {
+
+             Collections.sort(students, new Sortbylastname());
+         }
+         else if (input == 3) {
+
+             Collections.sort(students, new SortbyID());
+         }
+         else if (input == 4) {
+
+             Collections.sort(students, new Sortbyletter());
+         }
+         else if (input == 5) {
+
+             Collections.sort(students, new Sortbypercentage());
+         }
+
+
+
+
 
         System.out.println(students);
 
