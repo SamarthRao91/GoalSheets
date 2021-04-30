@@ -23,6 +23,7 @@ public class LevenshteinDistance {
             words.add(fileInput.nextLine());
         }
 
+        Collections.sort(words);
         for (int i = 0; i <= words.size() - 1; i++) {
             String baseWord = words.get(i);
 
