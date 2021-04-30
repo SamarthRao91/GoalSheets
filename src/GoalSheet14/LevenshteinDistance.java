@@ -36,6 +36,8 @@ public class LevenshteinDistance {
 
      static int findDistance(String word1, String word2, int word1Length, int word2Length)
     {
+        word1Length -= 1;
+        word2Length -=1;
         int i =1;
         int j =1;
         int substitutionCost = 0;
