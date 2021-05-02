@@ -24,13 +24,14 @@ public class LevenshteinDistance {
         }
 
         Collections.sort(words);
-        for (int i = 0; i <= words.size() - 1; i++) {
+       /* for (int i = 0; i <= words.size() - 1; i++) {
             String baseWord = words.get(i);
 
             for (int k = 0; k <= words.size() - 1; k++) {
                 String targetWord = words.get(k);
                 if (baseWord.length() == targetWord.length() || baseWord.length() == targetWord.length() - 1 || baseWord.length() == targetWord.length() + 1) {
                     int distance = findDistance(baseWord, targetWord, baseWord.length(), targetWord.length());
+                    System.out.println("\n" + distance);
                     if (distance == 1) {
                         //make a map, with key being the baseWord and targetWord being the value.
                         immediateNeighbors.put(baseWord, targetWord);
@@ -41,6 +42,11 @@ public class LevenshteinDistance {
             }
 
         }
+       immediateNeighbors.forEach((key, value) -> System.out.println(key + ":" + value));*/
+
+        int distanceTester = findDistance("over", "fox", 4, 3);
+        System.out.println(distanceTester);
+;
     }
 
     static int min(int a, int b, int c)
@@ -52,8 +58,8 @@ public class LevenshteinDistance {
     static int findDistance(String word1, String word2, int word1Length, int word2Length) {
         word1Length -= 1;
         word2Length -= 1;
-        int i = 1;
-        int j = 1;
+        int i;
+        int j;
         int substitutionCost = 0;
         //declaring 2d array, all values are already set to 0
         int[][] wordLength = new int[word1.length()][word2.length()];
