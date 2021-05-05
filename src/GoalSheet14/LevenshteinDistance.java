@@ -44,7 +44,7 @@ public class LevenshteinDistance {
         }
        immediateNeighbors.forEach((key, value) -> System.out.println(key + ":" + value));*/
 
-        int distanceTester = findDistance("over", "fox", 4, 3);
+        int distanceTester = findDistance("the", "cats");
         System.out.println(distanceTester);
 ;
     }
@@ -55,7 +55,9 @@ public class LevenshteinDistance {
     }
 
 
-    static int findDistance(String word1, String word2, int word1Length, int word2Length) {
+    static int findDistance(String word1, String word2) {
+        int word1Length = word1.length();
+        int word2Length = word2.length();
         word1Length -= 1;
         word2Length -= 1;
         int i;
