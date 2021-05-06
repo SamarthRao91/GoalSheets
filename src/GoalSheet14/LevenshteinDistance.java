@@ -24,16 +24,16 @@ public class LevenshteinDistance {
         }
 
         Collections.sort(words);
-       /* for (int i = 0; i <= words.size() - 1; i++) {
+       for (int i = 0; i <= words.size() - 1; i++) {
             String baseWord = words.get(i);
 
             for (int k = 0; k <= words.size() - 1; k++) {
                 String targetWord = words.get(k);
                 if (baseWord.length() == targetWord.length() || baseWord.length() == targetWord.length() - 1 || baseWord.length() == targetWord.length() + 1) {
-                    int distance = findDistance(baseWord, targetWord, baseWord.length(), targetWord.length());
-                    System.out.println("\n" + distance);
+                    int distance = findDistance(baseWord, targetWord);
                     if (distance == 1) {
                         //make a map, with key being the baseWord and targetWord being the value.
+
                         immediateNeighbors.put(baseWord, targetWord);
                     }
                 } else {
@@ -42,10 +42,9 @@ public class LevenshteinDistance {
             }
 
         }
-       immediateNeighbors.forEach((key, value) -> System.out.println(key + ":" + value));*/
+       immediateNeighbors.forEach((key, value) -> System.out.println(key + ":" + value));
+       //System.out.println("test");
 
-        int distanceTester = findDistance("sitting", "kitten");
-        System.out.println(distanceTester);
 
     }
 
@@ -76,7 +75,7 @@ public class LevenshteinDistance {
 
         for (j = 1; j <= word2Length; j++) {
             for (i = 1; i <= word1Length; i++) {
-                if (s1.indexOf(i) == s2.indexOf(j)) {
+                if (s1.charAt(i -1 ) == s2.charAt(j -1)) {
                     substitutionCost = 0;
                 } else {
                     substitutionCost = 1;
