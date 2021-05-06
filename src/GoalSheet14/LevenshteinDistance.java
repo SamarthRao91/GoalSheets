@@ -55,9 +55,9 @@ public class LevenshteinDistance {
     }
 
 
-    static int findDistance(String word1, String word2) {
-        int word1Length = word1.length();
-        int word2Length = word2.length();
+    static int findDistance(String s1, String s2) {
+        int word1Length = s1.length();
+        int word2Length = s2.length();
         int substitutionCost;
         int i;
         int j;
@@ -74,7 +74,7 @@ public class LevenshteinDistance {
 
         for (j = 1; j <= word2Length; j++) {
             for (i = 1; i <= word1Length; i++) {
-                if (word1.indexOf(i) == word2.indexOf(j)) {
+                if (s1.indexOf(i) == s2.indexOf(j)) {
                     substitutionCost = 0;
                 } else {
                     substitutionCost = 1;
