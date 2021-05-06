@@ -16,7 +16,7 @@ public class LevenshteinDistance {
     public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList < String > words = new ArrayList < > ();
-        Map < String, String > immediateNeighbors = new HashMap < String, String > ();
+        Map < String, String > immediateNeighbors = new HashMap<>();
         String filePath = "C:\\Users\\raosa\\IdeaProjects\\GoalSheets\\src\\GoalSheet14\\Dictionary";
         Scanner fileInput = new Scanner(new File(filePath));
         while (fileInput.hasNext()) {
@@ -44,9 +44,9 @@ public class LevenshteinDistance {
         }
        immediateNeighbors.forEach((key, value) -> System.out.println(key + ":" + value));*/
 
-        int distanceTester = findDistance("the", "cats");
+        int distanceTester = findDistance("sitting", "kitten");
         System.out.println(distanceTester);
-;
+
     }
 
     static int min(int a, int b, int c)
@@ -58,19 +58,17 @@ public class LevenshteinDistance {
     static int findDistance(String word1, String word2) {
         int word1Length = word1.length();
         int word2Length = word2.length();
-        word1Length -= 1;
-        word2Length -= 1;
+        int substitutionCost;
         int i;
         int j;
-        int substitutionCost = 0;
         //declaring 2d array, all values are already set to 0
-        int[][] wordLength = new int[word1.length()][word2.length()];
+        int[][] wordLengthArray = new int[word1Length +1 ][word2Length+1];
 
         for (i = 1; i <= word1Length; i++) {
-            wordLength[i][0] = i;
+            wordLengthArray[i][0] = i;
         }
         for (j = 1; j <= word2Length; j++) {
-            wordLength[0][j] = j;
+            wordLengthArray[0][j] = j;
         }
 
 
@@ -82,11 +80,11 @@ public class LevenshteinDistance {
                     substitutionCost = 1;
                 }
 
-                wordLength[i][j] = min(wordLength[i - 1][j] + 1, wordLength[i][j - 1] + 1, wordLength[i - 1][j - 1] + substitutionCost);
+                wordLengthArray[i][j] = min(wordLengthArray[i - 1][j] + 1, wordLengthArray[i][j - 1] + 1, wordLengthArray[i - 1][j - 1] + substitutionCost);
 
             }
         }
-        return wordLength[word1Length][word2Length];
+        return wordLengthArray[word1Length][word2Length];
 
     }
 }
