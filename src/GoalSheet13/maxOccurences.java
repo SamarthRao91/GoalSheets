@@ -1,5 +1,10 @@
 package GoalSheet13;
 
+/**
+ * Finds the mode of a given arraylist of integers
+ * @param list ArrayList of integers to be searched
+ * @return The mode of the given ArrayList
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,27 +33,31 @@ public class maxOccurences {
     }
     public static int max(ArrayList<Integer> numbers)
     {
-        Map< String, Integer > maxValues = new HashMap<>();
-        int maxOccurences = 0;
-        maxValues.put("values" , maxOccurences);
-        for(int i = 0; i < numbers.size(); i++)
+        int maxOccurence =0;
+        int retVal = 0;
+        Map< Integer, Integer > maxValues = new HashMap<>();
+
+        for (Integer i : numbers)
         {
-            for (Integer number : numbers) {
-                //see how many times numbers[i] appear in numbers[k]
-                if (numbers.get(i).equals(number)) {
-                    maxOccurences++;
-
-                }
-                if(maxOccurences  > maxValues.get("values") )
-                {
-                    maxValues.replace("values" , maxOccurences);
-
-                }
-
-            }
+            maxOccurence = maxValues.getOrDefault(i , 0);
+            maxOccurence++;
+            maxValues.put(i , maxOccurence);
         }
 
 
-        return maxValues.get("values");
-    }
+        for(Map.Entry<Integer, Integer> mapValue : maxValues.entrySet())
+        {
+             retVal = mapValue.getValue();
+            for(Map.Entry<Integer, Integer> innerMapValue : maxValues.entrySet())
+            {
+                    if(retVal < innerMapValue.getValue())
+                    {
+                        retVal = innerMapValue.getValue();
+                    }
+            }
+        }
+        return retVal;
+     }
+
+
 }
