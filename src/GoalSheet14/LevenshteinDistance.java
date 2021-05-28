@@ -81,8 +81,8 @@ public class LevenshteinDistance {
                 }
                 else
                 {
-
-                     for (String s : retVal) {
+                     //make rinse and repeat method
+                    /* for (String s : retVal) {
                         if (mapValues.get(l).equals(s)) {
                             toContinued = true;
                             break;
@@ -100,6 +100,7 @@ public class LevenshteinDistance {
                     mapValues = immediateNeighbors.get(mapValues.get(l));
                     retVal.add(mapValues.get(l));
                      l++;
+*/
 
                 }
             }
